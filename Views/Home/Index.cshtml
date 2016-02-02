@@ -1,0 +1,55 @@
+﻿
+<div class="panel panel-primary">
+    <div class="panel-heading"><b>Featured Videos</b></div>
+    <div class="panel-body">
+        @foreach(Dr.Israr_Ahmed.Models.Video video in ViewBag.Featured )
+        {
+            <div class="col-sm-6 col-md-4" style="margin-bottom:20px;">
+                <div class="thumbnail">
+                    <a href="~/PlayVideo/Play/@video.Id"><img src="~/Content/SnapShots/@video.Thumbnail" width="230" height="150" /></a>
+                        
+                    <div class="caption">
+                        <a href="~/PlayVideo/Play/@video.Id"><p>@video.Title</p></a>
+                        <p><a href="~/PlayVideo/Play/@video.Id" class="btn btn-primary" role="button">Play</a> <a href="~/PlayVideo/Play/@video.Id" class="btn btn-default" role="button">Button</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading"><b>Recently Uploaded Videos</b></div>
+    <div class="panel-body">
+        @foreach (Dr.Israr_Ahmed.Models.Video video in ViewBag.Recent)
+        {
+            <div class="col-sm-6 col-md-3" style="margin-bottom:20px;">
+                <div class="thumbnail">
+                    <a href="~/PlayVideo/Play/@video.Id"><img src="~/Content/SnapShots/@video.Thumbnail" width="160" height="100" /></a>
+                        <div class="caption">
+                            <p>@video.Title</p>
+                            <p><a href="~/PlayVideo/Play/@video.Id" class="btn btn-primary" role="button">Play</a> <a href="~/PlayVideo/Play/@video.Id" class="btn btn-default" role="button">Button</a></p>
+                        </div>
+</div>
+            </div>
+        }
+    </div>
+</div>
+
+<div class="panel panel-primary">
+    <div class="panel-heading"><b>Most Popular / Listened Lectures</b></div>
+    <div class="panel-body">
+        @foreach (Dr.Israr_Ahmed.Models.Video video in ViewBag.Views)
+        {
+            <div class="col-sm-6 col-md-3" style="margin-bottom:20px;">
+                <div class="thumbnail">
+                    <a href="~/PlayVideo/Play/@video.Id"><img src="~/Content/SnapShots/@video.Thumbnail" width="160" height="100" /></a>
+                    <div class="caption">
+                        <p>@video.Title</p>
+                        <p><a href="~/PlayVideo/Play/@video.Id" class="btn btn-primary" role="button">Play</a> <a href="~/PlayVideo/Play/@video.Id" class="btn btn-default" role="button">Button</a></p>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

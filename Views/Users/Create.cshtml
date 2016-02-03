@@ -29,6 +29,38 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                <div>
+                    <input type="button" id="b1" value="Check" />
+                    <div id="result"></div>
+
+                    <script>
+
+                        $(document).ready(function () {
+
+                            $('#checking').hide();
+
+                            $('#b1').click(function () {
+
+                                var email = $('#Email').val();
+
+
+                                $('#checking').show();
+                                $.getJSON("/Users/CheckEmail?Email=" + email, function (data) {
+                                    $('#checking').hide();
+                                    if (data) {
+                                        $('#result').text("User already exists");
+
+                                    }
+                                    else {
+                                        $('#result').text("User Name is available");
+                                    }
+                                });
+
+                            });
+
+                        });
+                    </script>
+                </div>
             </div>
         </div>
 
